@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"spin","cluster":"spin-rosco"},"name":"spin-rosco","namespace":"spinnaker"},"spec":{"ports":[{"port":8087,"protocol":"TCP","targetPort":8087}],"selector":{"app":"spin","cluster":"spin-rosco"},"type":"ClusterIP"}}
+  creationTimestamp: null
+  labels:
+    app: spin
+    cluster: spin-rosco
+  name: spin-rosco
+  selfLink: /api/v1/namespaces/spinnaker/services/spin-rosco
+spec:
+  ports:
+  - port: 8087
+    protocol: TCP
+    targetPort: 8087
+  selector:
+    app: spin
+    cluster: spin-rosco
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

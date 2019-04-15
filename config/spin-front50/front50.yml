@@ -1,0 +1,42 @@
+spectator:
+  applicationName: ${spring.application.name}
+  webEndpoint:
+    enabled: false
+
+spinnaker:
+  s3:
+    bucket: spin-38598039-dfcf-40bb-8cd8-4702593153d1
+    rootFolder: front50
+    endpoint: http://172.16.108.62:9002
+    accessKeyId: SQ2B2DXJUNZI7VKSIN1J
+    secretAccessKey: +ZR2b8W7i5Rd9UmjYflpYdfZCP3EEshMj+UrHsl+
+    enabled: true
+  oracle:
+    enabled: false
+  gcs:
+    rootFolder: front50
+    enabled: false
+  azs:
+    enabled: false
+  redis:
+    host: spin-redis.spinnaker
+    port: 6379
+    enabled: false
+
+server:
+  port: ${services.front50.port:8080}
+  address: ${services.front50.host:localhost}
+
+cassandra:
+  enabled: false
+
+hystrix:
+  command:
+    default.execution.isolation.thread.timeoutInMilliseconds: 15000
+  threadpool:
+    DefaultNotificationDAO:
+      coreSize: 25
+      maxQueueSize: 100
+    DefaultPipelineDAO:
+      coreSize: 25
+      maxQueueSize: 100

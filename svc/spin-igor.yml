@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"spin","cluster":"spin-igor"},"name":"spin-igor","namespace":"spinnaker"},"spec":{"ports":[{"port":8088,"protocol":"TCP","targetPort":8088}],"selector":{"app":"spin","cluster":"spin-igor"},"type":"ClusterIP"}}
+  creationTimestamp: null
+  labels:
+    app: spin
+    cluster: spin-igor
+  name: spin-igor
+  selfLink: /api/v1/namespaces/spinnaker/services/spin-igor
+spec:
+  ports:
+  - port: 8088
+    protocol: TCP
+    targetPort: 8088
+  selector:
+    app: spin
+    cluster: spin-igor
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

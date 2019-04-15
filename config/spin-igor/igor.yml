@@ -1,0 +1,56 @@
+spectator:
+  applicationName: ${spring.application.name}
+  webEndpoint:
+    enabled: false
+
+artifacts:
+  bitbucket:
+    enabled: false
+    accounts: []
+  gcs:
+    enabled: false
+    accounts: []
+  oracle:
+    enabled: false
+    accounts: []
+  github:
+    enabled: false
+    accounts: []
+  gitlab:
+    enabled: false
+    accounts: []
+  http:
+    enabled: false
+    accounts: []
+  helm:
+    enabled: false
+    accounts: []
+  s3:
+    enabled: false
+    accounts: []
+  maven:
+    enabled: false
+    accounts: []
+  templates: []
+
+jenkins:
+  enabled: true
+  masters:
+       -
+          address: "http://bigdata.integ.jenkins.bigtree.com/"
+          name: Jenkins
+          username: admin
+          password: admin
+travis:
+  enabled: false
+  masters: []
+wercker:
+  enabled: false
+  masters: []
+
+server:
+  port: ${services.igor.port:8088}
+  address: ${services.igor.host:localhost}
+
+redis:
+  connection: ${services.redis.baseUrl:redis://localhost:6379}
